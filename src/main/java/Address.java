@@ -1,4 +1,5 @@
 import java.util.List;
+import java.lang.*;
 
 
 public class Address {
@@ -169,31 +170,31 @@ public class Address {
 				}else {
 					 list=lu.getqus("中国",province,city);
 				}
-				if(city.equals("")) {
-					list1=lu.getCities("中国", province);
-					for(int j =0;j<list1.size();j++) {
-						String[] strlist={""};
-						list=lu.getqus("中国",province,list1.get(j));
-						for(i=0; i<list.size(); i++){
-							 k =0;
-							while(list.get(i).charAt(k)==address.charAt(k)) {
-								k++;
-							}
-						if(k>=2) {
-							find=true;
-								break;
-						}			
-						}
-						if(find==true){
-							area=list.get(i);
-							address=address.substring(k);
-							break;
-						}
-						else {
-							area="";
-						}
-					}
-				}else {
+//				if(city.equals("")) {
+//					list1=lu.getCities("中国", province);
+//					for(int j =0;j<list1.size();j++) {
+//						String[] strlist={""};
+//						list=lu.getqus("中国",province,list1.get(j));
+//						for(i=0; i<list.size(); i++){
+//							 k =0;
+//							while(list.get(i).charAt(k)==address.charAt(k)) {
+//								k++;
+//							}
+//						if(k>=2) {
+//							find=true;
+//								break;
+//						}			
+//						}
+//						if(find==true){
+//							area=list.get(i);
+//							address=address.substring(k);
+//							break;
+//						}
+//						else {
+//							area="";
+//						}
+//					}
+//				}else {
 					String[] strlist={""};
 					for(i=0; i<list.size(); i++){
 						strlist =address.split(list.get(i),2);
@@ -214,7 +215,7 @@ public class Address {
 					else {
 						area="";
 					}
-				}
+				//}
 				
 			
 		}
